@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Dev Tech - Premium PVC Card Printing & Doorstep Delivery</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fffbeeb0',
+                            100: '#fef3c7',
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#92400e',
+                            dark: '#0f172a',
+                            gold: '#fbbf24'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #334155 100%);
+        }
+        .gradient-card {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+        }
+        .pvc-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .pvc-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.25) 50%,
+                transparent 70%
+            );
+            transform: rotate(30deg);
+            animation: shine 6s infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            20% { transform: translateX(100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Title -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="https://lh3.googleusercontent.com/gg/AJWXcNeWFiyvyaIeU15e4awP2S-8jpbPEeLeC_-6QBP6FzZgDHEQr9JPgnI-2pRmtc__u0cpTQnHxurYP1nxP_eyXJ8m2oZDdHyvwXH5Rq4CwIILZjSO_Osg1zOMQJc0nUsQEvvgWPbguOogdk40dz0m5em7tpywInWAr1HE-ujbQlcttXIbbvLA4TVOwECAo6llBDYqXJlFP1msk5fIJ9XphrsX25-qoVkImvL-hGrttAGxnjjhuexC6uWxcsGrmuvHxvmBb3BWvgKpCG3lhJ3crFN5B8C3_CrqqpQ=s0" 
+                         alt="Shree Dev Tech Logo" 
+                         class="w-12 h-12 rounded-full border-2 border-amber-400 p-0.5 object-contain bg-white transition duration-300 group-hover:scale-105">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-extrabold text-xl tracking-tight text-amber-400">SHREE DEV TECH</span>
+                            <span class="text-[10px] bg-amber-500/20 text-amber-300 font-semibold px-2 py-0.5 rounded-full border border-amber-500/30">Since 2022</span>
+                        </div>
+                        <p class="text-xs text-slate-400 hidden sm:block">Quality Plastic PVC Printing & Doorstep Delivery</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <a href="#services" class="hover:text-amber-400 transition">Services</a>
+                    <a href="#pricing" class="hover:text-amber-400 transition">Pricing</a>
+                    <a href="#order" class="hover:text-amber-400 transition">Order Online</a>
+                    <a href="#features" class="hover:text-amber-400 transition">Features</a>
+                    <a href="#reviews" class="hover:text-amber-400 transition">Reviews</a>
+                    <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
+                </div>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/919414554881?text=Hi%20Shree%20Dev%20Tech,%20I%20want%20to%20order%20a%20PVC%20Plastic%20Card." 
+                       target="_blank" 
+                       class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-4 py-2.5 rounded-full shadow-lg hover:shadow-emerald-900/40 transition transform active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp Order</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3 text-sm">
+            <a href="#services" class="block py-2 text-slate-300 hover:text-amber-400 border-b border-slate-800">Services</a>
+            <a href="#pricing" class="block py-2 text-slate-300 hover:text-amber-400 border-b border-slate-800">Pricing</a>
+            <a href="#order" class="block py-2 text-amber-400 font-semibold border-b border-slate-800">Order Online</a>
+            <a href="#features" class="block py-2 text-slate-300 hover:text-amber-400 border-b border-slate-800">Features</a>
+            <a href="#reviews" class="block py-2 text-slate-300 hover:text-amber-400 border-b border-slate-800">Reviews</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-amber-400">Contact Us</a>
+            <a href="https://wa.me/919414554881?text=Hi%20Shree%20Dev%20Tech,%20I%20want%20to%20order%20a%20PVC%20Plastic%20Card." 
+               target="_blank" 
+               class="flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold py-3 rounded-xl shadow-md mt-4">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Order on WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero text-white relative py-16 lg:py-24 overflow-hidden">
+        <!-- Glow Orbs -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-300 font-semibold text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-inner">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span>Fast & Safe Doorstep Delivery Across India</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        Get Premium Plastic <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">PVC Cards</span> Delivered to Your Home!
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Convert your digital Aadhaar, PAN, Voter ID, driving license, and official IDs into durable, waterproof, high-definition plastic PVC smart cards.
+                    </p>
+
+                    <!-- Price Highlight Box -->
+                    <div class="inline-flex items-center gap-4 bg-slate-800/80 border border-slate-700/80 p-3 sm:p-4 rounded-2xl shadow-xl backdrop-blur-sm">
+                        <div class="bg-emerald-500 text-white font-black text-2xl sm:text-3xl px-4 py-2 rounded-xl shadow-md">
+                            ₹70
+                        </div>
+                        <div class="text-left">
+                            <div class="text-amber-400 font-bold text-sm sm:text-base">Special Flat Offer</div>
+                            <div class="text-slate-300 text-xs sm:text-sm">Only ₹70 Per Card • No Hidden Charges</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#order" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-amber-500/30 transition transform hover:-translate-y-0.5 active:scale-95">
+                            <i class="fa-solid fa-cart-shopping text-lg"></i>
+                            <span>Order Card Now</span>
+                        </a>
+                        <a href="https://wa.me/919414554881?text=Hi%20Shree%20Dev%20Tech,%20I%20have%20a%20query%20regarding%20card%20printing." 
+                           target="_blank" 
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-emerald-600/30 transition transform hover:-translate-y-0.5 active:scale-95">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Chat on WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800 text-slate-300 text-xs sm:text-sm">
+                        <div class="flex items-center justify-center lg:justify-start gap-2">
+                            <i class="fa-solid fa-droplet-slash text-amber-400"></i>
+                            <span>100% Waterproof</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-2">
+                            <i class="fa-solid fa-shield-halved text-amber-400"></i>
+                            <span>Safe Data Privacy</span>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-2">
+                            <i class="fa-solid fa-wallet text-amber-400"></i>
+                            <span>Wallet Friendly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card Mockup -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm sm:max-w-md">
+                        <!-- Background Glow behind Card -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-amber-500 to-emerald-500 rounded-3xl blur-2xl opacity-30 transform rotate-6"></div>
+                        
+                        <!-- Realistic PVC Card Graphic Container -->
+                        <div class="relative bg-slate-900 border-2 border-slate-700 p-6 rounded-3xl shadow-2xl space-y-4 pvc-shine">
+                            
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Official PVC Sample</span>
+                            </div>
+
+                            <!-- Simulated PVC Aadhaar Card Box -->
+                            <div class="bg-gradient-to-br from-slate-100 to-amber-50 border border-slate-300 rounded-2xl p-4 text-slate-900 shadow-inner relative overflow-hidden">
+                                <div class="flex justify-between items-start border-b border-amber-300 pb-2">
+                                    <div>
+                                        <div class="text-[10px] font-bold text-slate-500 uppercase">Government of India</div>
+                                        <div class="text-xs font-extrabold text-amber-900">PVC Aadhaar Card</div>
+                                    </div>
+                                    <i class="fa-solid fa-microchip text-xl text-amber-600"></i>
+                                </div>
+                                
+                                <div class="flex gap-3 my-3 items-center">
+                                    <div class="w-14 h-18 bg-slate-300 rounded-md border border-slate-400 flex flex-col items-center justify-center text-slate-500">
+                                        <i class="fa-solid fa-user text-2xl"></i>
+                                    </div>
+                                    <div class="space-y-1 text-left flex-1">
+                                        <div class="w-3/4 h-2.5 bg-slate-300 rounded"></div>
+                                        <div class="w-1/2 h-2 bg-slate-200 rounded"></div>
+                                        <div class="w-2/3 h-2 bg-slate-200 rounded"></div>
+                                        <div class="text-[11px] font-mono font-bold text-slate-800 pt-1">XXXX XXXX 3322</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between items-center text-[9px] text-slate-600 border-t border-slate-200 pt-1.5">
+                                    <span>High Definition Print</span>
+                                    <span class="font-bold text-emerald-700"><i class="fa-solid fa-check"></i> Verified PVC</span>
+                                </div>
+                            </div>
+
+                            <!-- Highlights Tag underneath -->
+                            <div class="bg-slate-800/90 rounded-xl p-3 text-center border border-slate-700">
+                                <p class="text-xs text-slate-300">
+                                    "Fast delivery, super clean print quality & unbreakable material!"
+                                </p>
+                                <div class="mt-1 text-amber-400 text-xs font-semibold">
+                                    ★ ★ ★ ★ ★ 5.0 Rated Service
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-600 font-bold text-xs sm:text-sm uppercase tracking-wider bg-amber-100 px-3 py-1 rounded-full">Our Printing Services</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">What We Print For You</h2>
+                <p class="text-slate-600 mt-3 text-base sm:text-lg">We turn your plain paper/PDF documents into heavy-duty, pocket-size plastic smart cards.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1: Aadhaar Card -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 border-t-4 border-t-amber-500">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">PVC Aadhaar Card</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Durable plastic Aadhaar card with crystal clear QR code and crisp text details. Water-resistant and wallet-ready.
+                    </p>
+                    <div class="flex items-center justify-between text-xs font-bold text-amber-700 pt-3 border-t border-slate-200">
+                        <span>Price: ₹70</span>
+                        <a href="#order" class="hover:underline">Order Now &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 2: PAN Card -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 border-t-4 border-t-amber-500">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">PAN Card</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Permanent Account Number (PAN) card printed on solid PVC material with glossy premium finishing.
+                    </p>
+                    <div class="flex items-center justify-between text-xs font-bold text-amber-700 pt-3 border-t border-slate-200">
+                        <span>Price: ₹70</span>
+                        <a href="#order" class="hover:underline">Order Now &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Voter ID Card -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 border-t-4 border-t-amber-500">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-check-to-slot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Voter ID Card</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Convert your e-Voter slip into a sturdy plastic identity card that fits easily into your wallet.
+                    </p>
+                    <div class="flex items-center justify-between text-xs font-bold text-amber-700 pt-3 border-t border-slate-200">
+                        <span>Price: ₹70</span>
+                        <a href="#order" class="hover:underline">Order Now &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Driving License & RC -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 border-t-4 border-t-amber-500">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Driving License & Vehicle RC</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        High quality DL and Registration Certificate card printouts that stand up to daily handling and transit.
+                    </p>
+                    <div class="flex items-center justify-between text-xs font-bold text-amber-700 pt-3 border-t border-slate-200">
+                        <span>Price: ₹70</span>
+                        <a href="#order" class="hover:underline">Order Now &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Ayushman & Smart Cards -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 border-t-4 border-t-amber-500">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-notes-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Ayushman & Health Cards</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Protect your family health cards with tear-proof and waterproof PVC plastic card printing.
+                    </p>
+                    <div class="flex items-center justify-between text-xs font-bold text-amber-700 pt-3 border-t border-slate-200">
+                        <span>Price: ₹70</span>
+                        <a href="#order" class="hover:underline">Order Now &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 6: Custom ID Cards -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 border-t-4 border-t-amber-500">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center text-2xl mb-5">
+                        <i class="fa-solid fa-address-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Custom & Business IDs</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Custom employee cards, student ID cards, visitor passes, and business membership cards.
+                    </p>
+                    <div class="flex items-center justify-between text-xs font-bold text-amber-700 pt-3 border-t border-slate-200">
+                        <span>Custom Quotes</span>
+                        <a href="#order" class="hover:underline">Order Now &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-amber-50/50 border-y border-amber-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
+                <!-- Background Accents -->
+                <div class="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-4 text-center lg:text-left">
+                        <span class="bg-amber-500 text-slate-950 font-extrabold text-xs uppercase px-3 py-1 rounded-full">Transparent Pricing</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Simple Flat Rate: <span class="text-amber-400">₹70 Per Card</span></h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                            No hidden charges! Pay just ₹70 per card for premium PVC plastic printing with doorstep delivery service.
+                        </p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-200 pt-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> Heavy Quality PVC Plastic</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> High-Resolution Color Print</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> Waterproof & Scratchproof</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400"></i> Safe Home Delivery</li>
+                        </ul>
+                    </div>
+
+                    <div class="lg:col-span-4 flex flex-col items-center justify-center bg-slate-800/80 border border-slate-700 p-6 rounded-2xl text-center space-y-4">
+                        <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Per Card Rate</span>
+                        <div class="text-5xl font-black text-amber-400">₹70</div>
+                        <p class="text-xs text-slate-300">Fast Order Processing via WhatsApp</p>
+                        <a href="#order" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-3 rounded-xl shadow-md transition">
+                            Book Your Order
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="py-16 sm:py-24 bg-slate-100 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Quick Booking</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">Order Your Card Online</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Fill in your delivery details below to generate a pre-filled WhatsApp order instantly!</p>
+            </div>
+
+            <!-- Card Order Form Container -->
+            <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
+                <div class="bg-slate-900 text-white p-6 sm:p-8 flex items-center justify-between border-b border-slate-800">
+                    <div>
+                        <h3 class="text-xl font-bold text-amber-400">Shree Dev Tech Order Portal</h3>
+                        <p class="text-xs text-slate-400 mt-1">Direct Delivery to Your Address • Pay ₹70/Card</p>
+                    </div>
+                    <div class="hidden sm:block text-right">
+                        <span class="text-xs text-emerald-400 font-semibold block"><i class="fa-solid fa-circle text-[8px] animate-pulse"></i> Instant Order Processing</span>
+                        <span class="text-xs text-slate-400">WhatsApp: 9414554881</span>
+                    </div>
+                </div>
+
+                <form id="pvcOrderForm" onsubmit="submitOrder(event)" class="p-6 sm:p-10 space-y-6">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Your Full Name <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400"><i class="fa-solid fa-user"></i></span>
+                                <input type="text" id="custName" required placeholder="e.g. Rahul Sharma" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-sm outline-none transition">
+                            </div>
+                        </div>
+
+                        <!-- Mobile / WhatsApp Number -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">WhatsApp Mobile No. <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400"><i class="fa-brands fa-whatsapp text-lg"></i></span>
+                                <input type="tel" id="custPhone" required placeholder="e.g. 9876543210" pattern="[0-9]{10}" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-sm outline-none transition">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Card Type Selection -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Select Card Type <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400"><i class="fa-solid fa-address-card"></i></span>
+                                <select id="cardType" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-sm outline-none transition bg-white">
+                                    <option value="PVC Aadhaar Card">PVC Aadhaar Card (₹70)</option>
+                                    <option value="PAN Card">PAN Card (₹70)</option>
+                                    <option value="Voter ID Card">Voter ID Card (₹70)</option>
+                                    <option value="Driving License / RC">Driving License / RC (₹70)</option>
+                                    <option value="Ayushman / Health Card">Ayushman / Health Card (₹70)</option>
+                                    <option value="Multiple Cards / Custom">Multiple Cards / Custom Order</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Quantity -->
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Number of Cards <span class="text-red-500">*</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400"><i class="fa-solid fa-hashtag"></i></span>
+                                <input type="number" id="cardQty" min="1" max="20" value="1" required onchange="calculateTotal()" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-sm outline-none transition">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delivery Address -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Full Delivery Address & Pincode <span class="text-red-500">*</span></label>
+                        <div class="relative">
+                            <span class="absolute top-3 left-3.5 text-slate-400"><i class="fa-solid fa-location-dot"></i></span>
+                            <textarea id="custAddress" rows="3" required placeholder="House No., Street Name, Landmark, City, State, Pincode" class="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-sm outline-none transition"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Instructions / Document Note -->
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-900 space-y-1">
+                        <div class="font-bold flex items-center gap-2 text-sm">
+                            <i class="fa-solid fa-circle-info text-amber-600"></i> Note for Document Upload:
+                        </div>
+                        <p>After clicking <strong>'Submit Order via WhatsApp'</strong>, your WhatsApp will open with this order summary. Simply attach your Card PDF/Photo directly in the chat!</p>
+                    </div>
+
+                    <!-- Price Summary Box -->
+                    <div class="flex items-center justify-between bg-slate-900 text-white p-4 rounded-xl border border-slate-800">
+                        <div>
+                            <div class="text-xs text-slate-400">Total Price Estimate</div>
+                            <div class="text-xs text-amber-400">₹70 × <span id="summaryQty">1</span> Card(s)</div>
+                        </div>
+                        <div class="text-2xl font-black text-amber-400" id="summaryTotal">₹70</div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-base py-4 rounded-xl shadow-xl hover:shadow-emerald-600/30 transition transform active:scale-95 flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Submit Order via WhatsApp</span>
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-600 font-bold text-xs uppercase tracking-wider bg-amber-100 px-3 py-1 rounded-full">Why Choose Us</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">Best PVC Card Quality Guaranteed</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="text-center p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-16 h-16 mx-auto bg-amber-500/10 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">100% Data Privacy</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Your personal documents are strictly confidential and deleted right after printing.</p>
+                </div>
+
+                <div class="text-center p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-16 h-16 mx-auto bg-amber-500/10 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-droplet-slash"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Waterproof & Durable</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">High-grade plastic material that doesn't wear, tear, or smudge in moisture.</p>
+                </div>
+
+                <div class="text-center p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-16 h-16 mx-auto bg-amber-500/10 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Fast Home Delivery</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Delivered straight to your doorstep without long queues or hassles.</p>
+                </div>
+
+                <div class="text-center p-6 rounded-2xl bg-slate-50 border border-slate-200">
+                    <div class="w-16 h-16 mx-auto bg-amber-500/10 text-amber-600 rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fa-solid fa-print"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">HD Color Quality</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Vibrant colors and crisp readability for all text, photos, and QR codes.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="py-16 sm:py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-400 font-bold text-xs uppercase tracking-wider bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30">Customer Reviews</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">What Our Customers Say</h2>
+                <p class="text-slate-400 mt-2 text-sm">Trusted by hundreds of satisfied customers across India since 2022.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl space-y-4">
+                    <div class="text-amber-400 text-sm">★ ★ ★ ★ ★</div>
+                    <p class="text-slate-300 text-sm italic">
+                        "Got my plastic Aadhaar card delivered at home in just a few days. The print quality is crisp and clear, better than local shops!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-700">
+                        <div class="w-10 h-10 bg-amber-500 text-slate-950 font-bold rounded-full flex items-center justify-center">R</div>
+                        <div>
+                            <div class="font-bold text-sm">Rakesh Verma</div>
+                            <div class="text-xs text-slate-400">Aadhaar PVC Card</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl space-y-4">
+                    <div class="text-amber-400 text-sm">★ ★ ★ ★ ★</div>
+                    <p class="text-slate-300 text-sm italic">
+                        "Very fast service on WhatsApp. I ordered 3 cards for my family (PAN & Aadhaar). Quality is top-notch for ₹70!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-700">
+                        <div class="w-10 h-10 bg-amber-500 text-slate-950 font-bold rounded-full flex items-center justify-center">P</div>
+                        <div>
+                            <div class="font-bold text-sm">Pooja Sharma</div>
+                            <div class="text-xs text-slate-400">Multiple PVC Cards</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/80 border border-slate-700 p-6 rounded-2xl space-y-4">
+                    <div class="text-amber-400 text-sm">★ ★ ★ ★ ★</div>
+                    <p class="text-slate-300 text-sm italic">
+                        "Reliable service from Shree Dev Tech. My driving license print is waterproof and fits nicely in my wallet slot."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-slate-700">
+                        <div class="w-10 h-10 bg-amber-500 text-slate-950 font-bold rounded-full flex items-center justify-center">M</div>
+                        <div>
+                            <div class="font-bold text-sm">Manish Soni</div>
+                            <div class="text-xs text-slate-400">Driving License PVC</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <!-- Brand Info -->
+                <div class="space-y-3 md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <img src="https://lh3.googleusercontent.com/gg/AJWXcNeWFiyvyaIeU15e4awP2S-8jpbPEeLeC_-6QBP6FzZgDHEQr9JPgnI-2pRmtc__u0cpTQnHxurYP1nxP_eyXJ8m2oZDdHyvwXH5Rq4CwIILZjSO_Osg1zOMQJc0nUsQEvvgWPbguOogdk40dz0m5em7tpywInWAr1HE-ujbQlcttXIbbvLA4TVOwECAo6llBDYqXJlFP1msk5fIJ9XphrsX25-qoVkImvL-hGrttAGxnjjhuexC6uWxcsGrmuvHxvmBb3BWvgKpCG3lhJ3crFN5B8C3_CrqqpQ=s0" 
+                             alt="Shree Dev Tech Logo" 
+                             class="w-10 h-10 rounded-full border border-amber-400 bg-white object-contain">
+                        <span class="font-bold text-xl text-white">SHREE DEV TECH</span>
+                    </div>
+                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+                        Your trusted printing partner since 2022. Delivering durable, high-quality plastic PVC smart cards straight to your doorstep.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-2">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#services" class="hover:text-amber-400">Services</a></li>
+                        <li><a href="#pricing" class="hover:text-amber-400">Pricing Plan</a></li>
+                        <li><a href="#order" class="hover:text-amber-400">Book Order</a></li>
+                        <li><a href="#features" class="hover:text-amber-400">Key Features</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="space-y-2">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider">Contact Info</h4>
+                    <div class="text-xs space-y-2">
+                        <p class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-sm"></i>
+                            <a href="https://wa.me/919414554881" target="_blank" class="hover:underline text-slate-200">+91 9414554881</a>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-amber-400 text-sm"></i>
+                            <a href="mailto:sdt192022@gmail.com" class="hover:underline text-slate-200">sdt192022@gmail.com</a>
+                        </p>
+                        <p class="flex items-center gap-2 text-slate-400">
+                            <i class="fa-solid fa-clock text-amber-400 text-sm"></i>
+                            <span>Mon - Sat: 9:00 AM - 8:00 PM</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-6 border-t border-slate-900 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; 2022 - 2026 Shree Dev Tech. All rights reserved.</p>
+                <p>Quality Plastic PVC Card Printing &amp; Doorstep Delivery</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Calculate Total Price dynamically
+        function calculateTotal() {
+            const qty = parseInt(document.getElementById('cardQty').value) || 1;
+            const total = qty * 70;
+            document.getElementById('summaryQty').innerText = qty;
+            document.getElementById('summaryTotal').innerText = '₹' + total;
+        }
+
+        // Handle Order Form Submission to WhatsApp
+        function submitOrder(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const cardType = document.getElementById('cardType').value;
+            const qty = document.getElementById('cardQty').value;
+            const address = document.getElementById('custAddress').value.trim();
+            const total = qty * 70;
+
+            // Formatted WhatsApp Message String
+            const message = `*NEW PVC CARD ORDER - SHREE DEV TECH*%0A%0A` +
+                `*Name:* ${encodeURIComponent(name)}%0A` +
+                `*WhatsApp No:* ${encodeURIComponent(phone)}%0A` +
+                `*Card Type:* ${encodeURIComponent(cardType)}%0A` +
+                `*Quantity:* ${encodeURIComponent(qty)} Card(s)%0A` +
+                `*Total Amount:* ₹${total}%0A` +
+                `*Delivery Address:* ${encodeURIComponent(address)}%0A%0A` +
+                `_Note: Attached my card document below for printing._`;
+
+            // Open WhatsApp with pre-filled message
+            const whatsappUrl = `https://wa.me/919414554881?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
